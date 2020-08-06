@@ -8,6 +8,8 @@ import java.util.Map;
 public class Parser {
     public static Map<String, String> splitQueryString(String queryString) throws UnsupportedEncodingException {
         Map<String, String> query_pairs = new LinkedHashMap<String, String>();
+        if(queryString==null) return query_pairs;
+
         String query = queryString;
         String[] pairs = query.split("&");
         for (String pair : pairs) {

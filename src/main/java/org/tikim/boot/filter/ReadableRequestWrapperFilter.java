@@ -96,7 +96,13 @@ public class ReadableRequestWrapperFilter implements Filter {
                     Iterator iterator = jsonObject.keySet().iterator();
                     while (iterator.hasNext()) {
                         String key = (String)iterator.next();
-                        setParameter(key, jsonObject.get(key).toString().replace("\"", "\\\""));
+                        String value;
+                        if(jsonObject.get(key)==null){
+                            value = null;
+                        }else{
+                          value = jsonObject.get(key).toString().replace("\"", "\\\"");
+                        }
+                        setParameter(key, value);
                     }
                 }
             } catch (ParseException e) {

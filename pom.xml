@@ -67,17 +67,42 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!--swagger-ui 2.9.2-->
+             
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
+            <!--버전을 넣지 않으면 동작하지 않는다. -->
             <version>2.9.2</version>
+            <!-- solved NumberFormatException in swagger2 -->
+            <exclusions>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- solved NumberFormatException in swagger2 -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.21</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>1.5.21</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
+            <!--버전을 넣지 않으면 동작하지 않는다. -->
             <version>2.9.2</version>
         </dependency>
+             
         <!--javax.validation-->
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
         <dependency>

@@ -2,13 +2,11 @@ package org.tikim.boot.domain.test;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import io.swagger.annotations.ApiModelProperty;
-import org.hibernate.annotations.CreationTimestamp;
+
 import org.tikim.boot.annotation.Xss;
 import org.tikim.boot.annotation.XssExclude;
 
-import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
 

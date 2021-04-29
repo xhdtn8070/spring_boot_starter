@@ -42,4 +42,14 @@ public class ChatMessage {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    @Override
+    public String toString() {
+        return "ChatMessage{" +
+            "type=" + type +
+            ", roomId='" + roomId + '\'' +
+            ", sender='" + sender + '\'' +
+            ", message='" + message + '\'' +
+            '}';
+    }
 }

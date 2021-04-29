@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.tikim.boot.domain.chat.ChatRoom;
+import org.tikim.boot.domain.chat.ChatRoomSimpleWebSocket;
 import org.tikim.boot.service.chat.ChatService;
 
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class DBChatServiceImpl implements ChatService {
     @Override
     public ChatRoom createRoom(String name) {
         String randomId = UUID.randomUUID().toString();
-        ChatRoom  chatRoom = new ChatRoom(randomId,name);
+        ChatRoom  chatRoom = new ChatRoomSimpleWebSocket(randomId,name);
         chatRooms.put(randomId,chatRoom);
         return chatRoom;
     }

@@ -11,6 +11,7 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 import org.tikim.boot.domain.chat.ChatMessage;
 import org.tikim.boot.domain.chat.ChatRoom;
+import org.tikim.boot.domain.chat.ChatRoomSimpleWebSocket;
 import org.tikim.boot.service.chat.ChatService;
 
 @Component
@@ -25,7 +26,7 @@ public class Basic2WebsocketChatHandler extends TextWebSocketHandler {
         String payload = message.getPayload();
         try{
             ChatMessage chatMessage = new ObjectMapper().readValue(payload, ChatMessage.class);
-            ChatRoom room = chatService.findRoomById(chatMessage.getRoomId());
+            ChatRoomSimpleWebSocket room = (ChatRoomSimpleWebSocket) chatService.findRoomById(chatMessage.getRoomId());
             //방을 못찾았을때의 exception 처리 필요
             room.handleActions(session, chatMessage, chatService);
         }catch (Exception exception){

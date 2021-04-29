@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <span th:text="${content}"></span>
+    <span>${message}</span>
+바이
 </body>
 </html>

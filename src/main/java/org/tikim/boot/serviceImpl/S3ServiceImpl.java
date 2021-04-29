@@ -20,14 +20,14 @@ import java.util.UUID;
 @Transactional
 @Service
 public class S3ServiceImpl implements S3Service {
-    @Resource
-    private AmazonS3 amazonS3;
+        @Resource
+        private AmazonS3 amazonS3;
 
-    @Value("${s3.bucket}")
-    private String bucket;
+        @Value("${s3.bucket}")
+        private String bucket;
 
-    @Value("${s3.custom-domain}")
-    private String customDomain;
+        @Value("${s3.custom-domain}")
+        private String customDomain;
 
     @Override
     public String uploadObject(MultipartFile multipartFile) throws IOException {

@@ -12,8 +12,8 @@ import org.tikim.boot.domain.chat.ChatRoom;
 import org.tikim.boot.service.chat.ChatService;
 
 @RestController
-@RequestMapping(value = "/chat")
-public class ChatController {
+@RequestMapping(value = "/chat/basic")
+public class BasicChatController {
     @Autowired
     @Qualifier("basicChatServiceImpl")
     private ChatService chatService;
